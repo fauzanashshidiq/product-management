@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# 🛍️ Aplikasi Katalog Pakaian
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proyek ini adalah aplikasi katalog pakaian berbasis **React.js** yang memungkinkan pengguna untuk menambahkan, melihat, dan mengelola daftar produk pakaian berdasarkan jenis dan kategori.  
+Dibuat menggunakan **Create React App** dengan pendekatan **component-based architecture** dan state management sederhana menggunakan props dan state lokal.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ✨ Pengembang
 
-### `npm start`
+Dikembangkan oleh **Muhammad Fauzan Ashshidiq** dengan NIM **1237050051** untuk memenuhi tugas mata kuliah **Pengembangan Aplikasi Web**.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Fitur Utama
 
-### `npm test`
+- **Daftar Produk (Product List)**  
+  Menampilkan semua produk pakaian yang telah ditambahkan lengkap dengan nama, jenis, kategori, dan harga.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Tambah Produk (Add Product)**  
+  Form input interaktif untuk menambahkan produk baru. Data kategori terstruktur berdasarkan jenis pakaian (contoh: Baju, Celana, Jaket, dll).
 
-### `npm run build`
+- **Navigasi Halaman**  
+  Menggunakan `react-router-dom` untuk berpindah antar halaman tanpa reload.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Validasi Input**  
+  Mencegah penambahan produk jika ada field yang belum diisi.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🧩 Struktur Folder
 
-### `npm run eject`
+```
+src/
+│
+├── components/
+│   └── ProductForm.jsx      # Form untuk tambah produk baru
+│
+├── pages/
+│   ├── HomePage.jsx         # Halaman utama berisi daftar produk
+│   └── AddProductPage.jsx   # Halaman tambah produk
+│
+├── data/
+│   └── categories.js        # Kumpulan kategori pakaian
+│
+├── App.jsx                  # Routing utama aplikasi
+└── index.js                 # Entry point React
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ⚙️ Cara Menjalankan
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Clone repository ini
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```bash
+   git clone https://github.com/username/nama-proyek.git
+   cd nama-proyek
+   ```
 
-## Learn More
+2. Install dependencies
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   npm install
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Jalankan aplikasi
 
-### Code Splitting
+   ```bash
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   Buka [http://localhost:3000](http://localhost:3000) di browser.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🧠 Teknologi yang Digunakan
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **React.js (CRA)** — Framework utama
+- **React Router DOM** — Routing antar halaman
+- **Tailwind CSS / CSS Modules** _(opsional)_ — Styling UI
+- **JavaScript (ES6+)** — Logika aplikasi
