@@ -1,6 +1,8 @@
-import { ShoppingBag, Trash2 } from "lucide-react";
+import { Pencil, ShoppingBag, Trash2 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 function ProductList({ products, onDelete, showAlert }) {
+  const navigate = useNavigate();
   const handleDelete = (id, nama) => {
     if (window.confirm(`Hapus "${nama}"?`)) {
       onDelete(id);
@@ -53,7 +55,14 @@ function ProductList({ products, onDelete, showAlert }) {
                 <td className="px-6 py-4 text-sm text-right font-semibold text-gray-800">
                   Rp {Number(p.harga).toLocaleString("id-ID")}
                 </td>
-                <td className="px-6 py-4 text-center">
+                <td className="px-6 py-4 text-center flex justify-center gap-2">
+                  <button
+                    onClick={() => navigate(`/edit/${p.id}`)}
+                    className="inline-flex items-center gap-1 px-3 py-1.5 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition text-sm font-medium"
+                  >
+                    <Pencil className="w-4 h-4" />
+                    Edit
+                  </button>
                   <button
                     onClick={() => handleDelete(p.id, p.nama)}
                     className="inline-flex items-center gap-1 px-3 py-1.5 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition text-sm font-medium"

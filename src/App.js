@@ -3,6 +3,8 @@ import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
 import AddProductPage from "./pages/AddProductPage";
 import { useState } from "react";
+import EditProductPage from "./pages/EditProductPage";
+import { categories } from "./data/categories";
 
 function App() {
   const [products, setProducts] = useState([
@@ -37,6 +39,12 @@ function App() {
     setProducts(products.filter((p) => p.id !== id));
   };
 
+  const updateProduct = (id, updatedProduct) => {
+    setProducts(
+      products.map((p) => (p.id === id ? { ...p, ...updatedProduct } : p))
+    );
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
@@ -48,6 +56,16 @@ function App() {
         <Route
           path="/tambah"
           element={<AddProductPage addProduct={addProduct} />}
+        />
+        <Route
+          path="/edit/:id"
+          element={
+            <EditProductPage
+              products={products}
+              categories={categories}
+              onUpdate={updateProduct}
+            />
+          }
         />
       </Routes>
     </div>
