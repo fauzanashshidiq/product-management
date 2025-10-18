@@ -1,4 +1,4 @@
-# 🛍️ Aplikasi Katalog Pakaian
+# 🛍️ Aplikasi Manajemen Data Produk Pakaian
 
 Proyek ini adalah aplikasi katalog pakaian berbasis **React.js** yang memungkinkan pengguna untuk menambahkan, melihat, dan mengelola daftar produk pakaian berdasarkan jenis dan kategori.  
 Dibuat menggunakan **Create React App** dengan pendekatan **component-based architecture** dan state management sederhana menggunakan props dan state lokal.
@@ -58,8 +58,8 @@ src/
 1. Clone repository ini
 
    ```bash
-   git clone https://github.com/username/nama-proyek.git
-   cd nama-proyek
+   git clone https://github.com/fauzanashshidiq/product-management.git
+   cd product-management
    ```
 
 2. Install dependencies
