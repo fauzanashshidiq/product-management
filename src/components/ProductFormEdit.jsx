@@ -1,17 +1,16 @@
-import { useState } from "react";
-import { Plus, ArrowLeft } from "lucide-react";
+import { useState, useEffect } from "react";
+import { ArrowLeft, Check } from "lucide-react";
 import Alert from "./Alert";
 import { useNavigate } from "react-router-dom";
 
-function ProductForm({ onAdd, categories }) {
+export default function ProductFormEdit({ product, categories, onUpdate }) {
   const navigate = useNavigate();
-  const [form, setForm] = useState({
-    nama: "",
-    jenis: "",
-    kategori: "",
-    harga: "",
-  });
+  const [form, setForm] = useState(product || {});
   const [alert, setAlert] = useState(null);
+
+  useEffect(() => {
+    setForm(product || {});
+  }, [product]);
 
   const showAlert = (type, message) => {
     setAlert({ type, message });
@@ -24,11 +23,10 @@ function ProductForm({ onAdd, categories }) {
       showAlert("error", "Semua field harus diisi!");
       return;
     }
-    onAdd(form);
-    setForm({ nama: "", jenis: "", kategori: "", harga: "" });
+    onUpdate(product.id, form);
     navigate("/", {
       state: {
-        alert: { type: "success", message: "Produk berhasil ditambahkan!" },
+        alert: { type: "success", message: "Produk berhasil diperbarui!" },
       },
     });
   };
@@ -36,32 +34,32 @@ function ProductForm({ onAdd, categories }) {
   return (
     <div className="max-w-xl mx-auto">
       {alert && <Alert {...alert} onClose={() => setAlert(null)} />}
-      <div className="bg-white rounded-xl shadow-sm border overflow-hidden">
+      <div className="bg-white rounded-xl shadow-sm border overflow-hidden mt-4">
         <div className="p-6 space-y-4">
           <div className="flex justify-center items-center mb-6">
-            <h2 className="text-xl font-bold mb-2 ">Tambah Produk Pakaian</h2>
+            <h2 className="text-xl font-bold mb-2 ">Edit Produk Pakaian</h2>
           </div>
+
+          {/* Nama Produk */}
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-2">
               Nama Pakaian
             </label>
             <input
               type="text"
-              name="nama"
-              value={form.nama}
+              value={form.nama || ""}
               onChange={(e) => setForm({ ...form, nama: e.target.value })}
-              placeholder="Contoh: Kaos Oversized Hitam"
               className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition text-sm"
             />
           </div>
 
+          {/* Jenis */}
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-2">
               Jenis Pakaian
             </label>
             <select
-              name="jenis"
-              value={form.jenis}
+              value={form.jenis || ""}
               onChange={(e) =>
                 setForm({ ...form, jenis: e.target.value, kategori: "" })
               }
@@ -76,14 +74,14 @@ function ProductForm({ onAdd, categories }) {
             </select>
           </div>
 
+          {/* Kategori */}
           {form.jenis && (
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">
                 Kategori Pakaian
               </label>
               <select
-                name="kategori"
-                value={form.kategori}
+                value={form.kategori || ""}
                 onChange={(e) => setForm({ ...form, kategori: e.target.value })}
                 className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition text-sm"
               >
@@ -97,20 +95,20 @@ function ProductForm({ onAdd, categories }) {
             </div>
           )}
 
+          {/* Harga */}
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-2">
               Harga (Rp)
             </label>
             <input
               type="number"
-              name="harga"
-              value={form.harga}
+              value={form.harga || ""}
               onChange={(e) => setForm({ ...form, harga: e.target.value })}
-              placeholder="Contoh: 125000"
               className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition text-sm"
             />
           </div>
 
+          {/* Tombol */}
           <div className="flex gap-3 pt-2">
             <button
               onClick={() => navigate("/")}
@@ -123,8 +121,8 @@ function ProductForm({ onAdd, categories }) {
               onClick={handleSubmit}
               className="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2.5 rounded-lg font-medium hover:from-blue-600 hover:to-blue-700 transition shadow-sm text-sm"
             >
-              <Plus className="w-4 h-4" />
-              Tambah Produk
+              <Check className="w-4 h-4" />
+              Simpan Perubahan
             </button>
           </div>
         </div>
@@ -132,5 +130,3 @@ function ProductForm({ onAdd, categories }) {
     </div>
   );
 }
-
-export default ProductForm;

@@ -26,16 +26,16 @@ function ProductList({ products, onDelete, showAlert }) {
           <thead className="bg-gray-50 border-b">
             <tr>
               <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">
-                Nama
+                Nama Pakaian
               </th>
               <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">
-                Jenis
+                Jenis Pakaian
               </th>
               <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">
-                Kategori
+                Kategori Pakaian
               </th>
               <th className="px-6 py-3 text-right text-sm font-semibold text-gray-700">
-                Harga
+                Harga Pakaian
               </th>
               <th className="px-6 py-3 text-center text-sm font-semibold text-gray-700">
                 Aksi

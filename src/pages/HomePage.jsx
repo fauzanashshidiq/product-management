@@ -24,7 +24,7 @@ export default function HomePage({ products, onDelete }) {
   return (
     <div className="container mx-auto px-4 py-6">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold mb-2">Daftar Produk</h2>
+        <h2 className="text-xl font-bold mb-2">Daftar Produk Pakaian</h2>
         <Link
           to="/tambah"
           className="px-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2.5 rounded-lg font-medium hover:from-blue-600 hover:to-blue-700 transition shadow-sm"

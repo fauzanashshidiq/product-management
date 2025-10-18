@@ -9,7 +9,7 @@ export default function Header() {
         </div>
         <div>
           <h1 className="text-xl font-bold text-gray-800">FashionStock</h1>
-          <p className="text-xs text-gray-500">Manajemen Produk</p>
+          <p className="text-xs text-gray-500">Manajemen Produk Pakaian</p>
         </div>
       </div>
     </header>

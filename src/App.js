@@ -55,7 +55,9 @@ function App() {
         />
         <Route
           path="/tambah"
-          element={<AddProductPage addProduct={addProduct} />}
+          element={
+            <AddProductPage addProduct={addProduct} categories={categories} />
+          }
         />
         <Route
           path="/edit/:id"
