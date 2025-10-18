@@ -12,14 +12,14 @@ function App() {
       id: 1,
       nama: "Kaos Polos",
       jenis: "Baju",
-      kategori: "Casual",
+      kategori: "Kaos",
       harga: 75000,
     },
     {
       id: 2,
       nama: "Celana Jeans",
       jenis: "Celana",
-      kategori: "Panjang",
+      kategori: "Jeans",
       harga: 150000,
     },
     {
