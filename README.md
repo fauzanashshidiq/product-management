@@ -34,10 +34,15 @@ src/
 │
 ├── components/
 │   └── ProductForm.jsx      # Form untuk tambah produk baru
+│   ├── ProductForm.jsx      # Form untuk tambah produk (dipakai di AddProductPage)
+│   ├── ProductFormEdit.jsx  # Form untuk edit produk (dipakai di EditProductPage)
+│   ├── ProductList.jsx      # Tabel daftar produk (dipanggil dari HomePage)
+│   └── Alert.jsx            # Komponen notifikasi (snackbar)
 │
 ├── pages/
 │   ├── HomePage.jsx         # Halaman utama berisi daftar produk
 │   └── AddProductPage.jsx   # Halaman tambah produk
+│   └── EditProductPage.jsx  # Halaman edit produk (memakai ProductFormEdit)
 │
 ├── data/
 │   └── categories.js        # Kumpulan kategori pakaian
