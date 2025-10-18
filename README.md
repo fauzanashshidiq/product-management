@@ -33,22 +33,22 @@ Dikembangkan oleh **Muhammad Fauzan Ashshidiq** dengan NIM **1237050051** untuk 
 src/
 │
 ├── components/
-│   └── ProductForm.jsx      # Form untuk tambah produk baru
-│   ├── ProductForm.jsx      # Form untuk tambah produk (dipakai di AddProductPage)
-│   ├── ProductFormEdit.jsx  # Form untuk edit produk (dipakai di EditProductPage)
-│   ├── ProductList.jsx      # Tabel daftar produk (dipanggil dari HomePage)
-│   └── Alert.jsx            # Komponen notifikasi (snackbar)
+│   ├── Header.jsx             # Navbar / judul aplikasi
+│   ├── ProductForm.jsx        # Form untuk tambah produk (dipakai di AddProductPage)
+│   ├── ProductFormEdit.jsx    # Form untuk edit produk (dipakai di EditProductPage)
+│   ├── ProductList.jsx        # Tabel daftar produk (dipanggil dari HomePage)
+│   └── Alert.jsx              # Komponen notifikasi (snackbar)
 │
 ├── pages/
-│   ├── HomePage.jsx         # Halaman utama berisi daftar produk
-│   └── AddProductPage.jsx   # Halaman tambah produk
-│   └── EditProductPage.jsx  # Halaman edit produk (memakai ProductFormEdit)
+│   ├── HomePage.jsx           # Halaman utama: daftar produk + tombol Tambah
+│   ├── AddProductPage.jsx     # Halaman tambah produk (memakai ProductForm)
+│   └── EditProductPage.jsx    # Halaman edit produk (memakai ProductFormEdit)
 │
 ├── data/
-│   └── categories.js        # Kumpulan kategori pakaian
+│   └── categories.js          # Data statis: jenis & daftar kategori
 │
-├── App.jsx                  # Routing utama aplikasi
-└── index.js                 # Entry point React
+├── App.jsx                    # Routing utama + state products + fungsi add/update/delete
+└── index.js                   # Entry point React
 ```
 
 ---
